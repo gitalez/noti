@@ -1,0 +1,47 @@
+en firebase , configuracion del proyecto ( push noti )
+
+
+
+////////////////  config one signal /////////////
+
+
+ionic cordova plugin add onesignal-cordova-plugin
+npm install @ionic-native/onesignal
+
+luego 
+
+import { OneSignal } from '@ionic-native/onesignal/ngx';
+
+constructor(private oneSignal: OneSignal) { }
+
+creamos un servicio push para manejar las notificaciones 
+
+
+en one signal creamos una app : push-noti-prueba
+
+ en setting tomamos el key and id 
+
+ app id : 85ded559-d165-4e58-a77d-e3f8ca355424 // lo colocamos en el primer arg de startInit( appid , google project number)
+
+el segungo argumento es el google proyect number , este key es la relacion que va  a tener firebase cloud messaging con est app
+
+que lo tomamos del proyecto firebase creado ( aquie se llama sender ID : 1038960959773)
+
+//// envio de push desde la plataforma onesignal
+
+
+// vamos a la consola del proyecto one signal , platforms
+
+seleccionamos android 
+
+nos pide  firebase server key :  ( la sacamos del proyecto de firebase creado )
+
+AAAA8ebmIR0:APA91bErNxNyQ4BPW33DHTMVYWGgyAHXwiOaLcQcfKOVDj4OWDWrtMoX3CUpoVXLv9qsRko-5VMnvwT6HQEA2kWjWjCiHmMzn19BhXFincBORDEfxU-t9Np63cFJPmcOzCOyDEIOf0Ky
+
+
+nos pide firebase sender id 
+que la la obtuvimos antes : 1038960959773
+
+
+
+hay que instalar para ios  : sudo gem install cocoapods
